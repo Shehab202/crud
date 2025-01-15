@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./crud.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h2>crud</h2>
+        <p>product managment system</p>
+      </div>
+      <div class="input">
+        <input placeholder="title" type="text" id="title" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="texts"
+            placeholder="texts"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="discount"
+          />
+          <small id="total"> </small>
+        </div>
+        <input placeholder="count" type="number" id="count" />
+        <input placeholder="category" type="text" id="category" />
+        <button  id="submit">creat</button>
+ 
+      </div>
+      <div class="outputs">
+        <div class="searchblock">
+          <input
+          onkeyup="handleSearch(this.value)"
+          type="text" id="search" placeholder="search" />
+          <div class="btnsearch">
+            <button onclick="searchFn(this.id)" id="searchtitle">Search By Title</button>
+            <button onclick="searchFn(this.id)" id="searchcategory">Search By Category</button>
+          </div>
+        </div>
+        <table>
+          <button id="clear"></button>
+          <tr>
+            <th>id</th>
+            <th>taile</th>
+            <th>ads</th>
+            <th>price</th>
+            <th>discount</th>
+            <th>category</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="./crud.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  </body>
+</html>
